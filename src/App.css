@@ -1,38 +1,229 @@
-.App {
-  text-align: center;
+@import url('https://fonts.googleapis.com/css2?family=Roboto:ital,wght@0,100;0,300;0,400;0,500;0,700;0,900;1,100;1,300;1,400;1,500;1,700;1,900&display=swap');
+
+body {
+  font-family: "Roboto", sans-serif;
+  background-color: hsl(234, 29%, 20%);
 }
 
-.App-logo {
-  height: 40vmin;
-  pointer-events: none;
+h1 {
+  font-size: 30px;
+  line-height: 34px;
+  margin: 0;
 }
 
-@media (prefers-reduced-motion: no-preference) {
-  .App-logo {
-    animation: App-logo-spin infinite 20s linear;
-  }
+p, li {
+  font-size: 14px;
 }
 
-.App-header {
-  background-color: #282c34;
-  min-height: 100vh;
+span {
+  font-weight: bold;
+  color: hsl(4, 100%, 67%);
+}
+
+label {
+  display: flex;
+  justify-content: space-between;
+}
+
+label p {
+  font-size: 11px;
+  margin-bottom: 5px;
+  font-weight: bold;
+}
+
+label p:nth-child(2) {
+  color: hsl(4, 100%, 67%) ;
+}
+
+.main {
+  height: 100vh;
+  width: 100vw;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.card {
+  height: 60%;
+  width: 70%;
+  max-width: 53%;
+  max-height: 60%;
+  display: flex;
+  box-sizing: border-box;
+  background-color: white;
+  border-radius: 20px;
+
+  padding: 1rem;
+}
+
+.content {
+  display: flex;
+  height: 100%;
+  flex-direction: column;
+  justify-content: space-between;
+  box-sizing: border-box;
+  width: 55%;
+
+  padding: 3rem 2rem;
+}
+
+ul {
+  margin: 0;
+  padding: 0.5rem 1.5rem;
+}
+
+li {
+  list-style-image: url("./assets/images/icon-list.svg");
+  padding-inline-start: 1ch;
+  vertical-align: middle;
+  margin-bottom: 1rem;
+  list-style-position: outside;
+}
+
+.image {
+  height: 100%;
+  width: 46%;
+  object-fit: cover;
+  box-sizing: border-box;
+
+  background-size: cover;
+
+
+}
+
+.image > img {
+  height: 100%;
+  width: 100%;
+  object-fit: cover;
+  border-radius: 15px;
+}
+
+
+form {
   display: flex;
   flex-direction: column;
-  align-items: center;
-  justify-content: center;
-  font-size: calc(10px + 2vmin);
+}
+
+input {
+  padding: 0.75rem;
+  border: 1px solid hsla(234, 29%, 20%, 0.367);
+  border-radius: 8px;
+}
+
+.input-error {
+  background-color: rgba(225, 119, 119, 0.205);
+  border-color: rgb(219, 50, 50);
+}
+
+button {
+  background-color: hsl(235, 18%, 26%);
+  border: none;
+  border-radius: 8px;
+
   color: white;
+  font-weight: bold;
+  padding: 0.75rem;
+  margin-top: 1rem;
+
+  transition: background-color 0.2s;
 }
 
-.App-link {
-  color: #61dafb;
+button:hover {
+  background: rgba(240, 77, 55, 0.9);
+  filter: drop-shadow(-1px 10px 10px #ff9a57);
 }
 
-@keyframes App-logo-spin {
-  from {
-    transform: rotate(0deg);
+
+
+.success-card {
+  background-color: white;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  width: 20%;
+  height: 35%;
+  min-width: 20%;
+  padding: 2.5rem;
+  border-radius: 15px;
+}
+
+.success-card > img {
+  height: 40px;
+  width: 40px;
+  margin: 0 0 1rem 0;
+}
+
+.success-card > button {
+  width: 100%;
+  transition: 0.5s;
+}
+
+@media screen and (max-width: 1024px) {
+  .card {
+    width: 70%;
+    max-width: 70%;
   }
-  to {
-    transform: rotate(360deg);
+
+  .success-card {
+    height: 35%;
+    width: 30%;
   }
 }
+
+@media screen and (max-width: 800px) {
+  .card {
+    width: 80%;
+    max-width: 80%;
+  }
+}
+
+@media screen and (max-width: 700px) {
+  .card {
+    width: 90%;
+    max-width: 90%;
+  }
+
+  .success-card {
+    height: 35%;
+    width: 40%;
+  }
+}
+
+@media screen and (max-width: 550px) {
+  .card {
+    flex-direction: column-reverse;
+    min-width: 100%;
+    min-height: 100%;
+    border-radius: 0;
+    padding: 0;
+  }
+
+  .content, .image {
+    width: 100%;
+  }
+  .image {
+    height: 40%;
+    object-position: right top;
+  }
+
+  .image > img {
+    height: 100%;
+    width: 100%;
+    object-position: 10% 10%;
+  }
+
+  .content {
+    justify-content: center;
+  }
+  
+  .success-card {
+    padding: 1.5rem;
+    height: 33%;
+    width: 60%;
+  }
+  .success-card > h1 {
+    font-size: 20px;
+  }
+}
+
+
